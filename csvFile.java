@@ -20,9 +20,9 @@ public class csvFile {
     try {
       s = new Scanner(f); // Create scanner (reason for the try).
       headers = s.nextLine().split(","); // Get column headers.
-      int size = getSize(f); // Determine number of lines (rows) in the file.
+      int size = (getSize(f) - 1); // Determine number of lines (rows) in the file.
       data = new String[size][]; // Appropriately size the data array based on number of rows.
-      for ( int i = 0; i < size - 1; i++) { // Load rows from file.
+      for ( int i = 0; i < size; i++) { // Load rows from file.
         data[i] = s.nextLine().split(",");
       }
       s.close();
